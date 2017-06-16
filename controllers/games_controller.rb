@@ -11,12 +11,20 @@ get '/games' do
 end
 
 #new
-# get '/games/new' do
-#   erb(:"games/new")
-#   end
+get '/games/new' do
+  @publishers = Publisher.all()
+  erb(:"games/new")
+  end
 
 #show
 get '/games/:id' do
   @games = Game.find(params['id'].to_i)
   erb(:"games/info")
+end
+
+#save
+post '/games' do
+  game = Game.new(params)
+  game.save()
+  redirect to ("/games")
 end

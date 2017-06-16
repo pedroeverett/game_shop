@@ -1,0 +1,15 @@
+<form method="post" action="/games">
+  <label for="game-name">Name: </label>
+  <input id="game-name" type="text" name="name">
+
+  <label for="game-quantity">Quantity: </label>
+  <input id="game-quantity" type="number" name="quantity">
+
+  <label for="select-publisher">Select Publisher: </label>
+  <select id="select-publisher" name="publisher_id">
+    <% for publisher in @publishers %>
+      <option value = "<%= publisher.id %>"><%= publisher.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Add Game">
+</form>

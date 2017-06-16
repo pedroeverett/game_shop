@@ -17,4 +17,11 @@ class Game
     @id = game.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM games"
+    games = SqlRunner.run(sql)
+    result = games.map{ |game| Game.new(game)}
+    return result
+  end
+
 end

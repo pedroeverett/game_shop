@@ -17,13 +17,6 @@ class Game
     @id = game.first()['id'].to_i
   end
 
-  def self.all()
-    sql = "SELECT * FROM games"
-    games = SqlRunner.run(sql)
-    result = games.map{ |game| Game.new(game)}
-    return result
-  end
-
   def publisher()
     sql = "SELECT publishers.* FROM publishers WHERE id = #{@publisher_id}"
     result = SqlRunner.run(sql)
@@ -31,5 +24,21 @@ class Game
     publisher = Publisher.new(publisher_info)
     return publisher.name
   end
+
+  def self.all()
+    sql = "SELECT * FROM games"
+    games = SqlRunner.run(sql)
+    result = games.map{ |game| Game.new(game)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM games WHERE id = #{id}"
+    game = SqlRunner.run(sql).first
+    result = Game.new(game)
+    return result
+  end
+
+
 
 end

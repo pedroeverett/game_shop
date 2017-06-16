@@ -1,1 +1,18 @@
 <h1>Games</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Quantity</th>
+    <th></th>
+    <th>Publisher</th>
+  </tr>
+  <% for game in @games %>
+  <tr>
+    <td><%= game.name  %></td>
+    <td>|</td>
+    <td><%= game.quantity %></td>
+  </tr>
+  <% end %>
+</table>

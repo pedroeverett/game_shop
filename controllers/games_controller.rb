@@ -16,7 +16,7 @@ end
 #   end
 
 #show
-get '/games/info' do
+get '/games/:id' do
   @games = Game.find(params['id'].to_i)
   erb(:"games/info")
 end

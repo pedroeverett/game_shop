@@ -10,7 +10,7 @@
   </tr>
   <% for game in @games %>
   <tr>
-    <td><%= game.name  %></td>
+    <td><a href="/games/<%= game.id %>"><%= game.name  %></a></td>
     <td>|</td>
     <td><%= game.quantity %></td>
     <td>|</td>

@@ -12,7 +12,7 @@ class Game
   end
 
   def save()
-    sql = "INSERT INTO games (name, quantity, manufacturer_id) VALUES ('@name', '@quantity', '@manufacturer_id') RETURNING *"
+    sql = "INSERT INTO games (name, quantity, manufacturer_id) VALUES ('#{@name}', '#{@quantity}', '#{@manufacturer_id}') RETURNING *"
     game = SqlRunner.run(sql)
     @id = game.first()['id'].to_i
   end

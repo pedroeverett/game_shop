@@ -24,4 +24,12 @@ class Game
     return result
   end
 
+  def publisher()
+    sql = "SELECT publishers.* FROM publishers WHERE id = #{@publisher_id}"
+    result = SqlRunner.run(sql)
+    publisher_info = result[0]
+    publisher = Publisher.new(publisher_info)
+    return publisher.name
+  end
+
 end

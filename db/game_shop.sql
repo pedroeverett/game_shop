@@ -1,7 +1,7 @@
 DROP TABLE games;
 DROP TABLE publishers;
 
-CREATE TABLE publisher(
+CREATE TABLE publishers(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255)
   );

@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require_relative('controllers/games_controller.rb')
 require_relative('controllers/publishers_controller.rb')
 
-get ('/') do
-  erb(:index)
+get '/' do
+  erb( :index )
 end
+

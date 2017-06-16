@@ -53,7 +53,7 @@ game5 = Game.new({
 game5.save()
 
 game6 = Game.new({
-  "name" => "Dante's Inferno",
+  "name" => "Battlefield Hardline",
   "quantity" => 3,
   "publisher_id" => publisher3.id
   })

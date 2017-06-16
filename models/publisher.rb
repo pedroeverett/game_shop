@@ -1,6 +1,6 @@
 require_relative('../db/sqlrunner.rb')
 
-class Manufacturer
+class Publisher
 
   attr_reader :id, :name
 
@@ -10,9 +10,9 @@ class Manufacturer
   end
 
   def save()
-    sql = "INSERT INTO manufacturers (name) VALUES ('#{@name}') RETURNING *"
-    manufacturer = SqlRunner.run(sql)
-    @id = manufacturer.first()['id'].to_i
+    sql = "INSERT INTO publishers (name) VALUES ('#{@name}') RETURNING *"
+    publisher = SqlRunner.run(sql)
+    @id = publisher.first()['id'].to_i
   end
 
 end

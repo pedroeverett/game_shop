@@ -1,7 +1,7 @@
 DROP TABLE games;
-DROP TABLE manufacturers;
+DROP TABLE publishers;
 
-CREATE TABLE manufacturers(
+CREATE TABLE publisher(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255)
   );
@@ -10,5 +10,5 @@ CREATE TABLE games(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   quantity INT8,
-  manufacturer_id INT8 REFERENCES games(id)
+  publisher_id INT8 REFERENCES games(id)
 );

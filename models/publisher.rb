@@ -15,4 +15,11 @@ class Publisher
     @id = publisher.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM publishers"
+    publishers = SqlRunner.run(sql)
+    result = publishers.map{ |publisher| Publisher.new(publisher)}
+    return result
+  end
+
 end

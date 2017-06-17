@@ -15,6 +15,12 @@ get '/publishers/new' do
   erb(:"publishers/new")
 end
 
+#edit
+get '/publishers/:id/edit' do
+  @publishers = Publisher.find(params['id'].to_i())
+  erb(:"publishers/edit")
+end
+
 #show
 get '/publishers/:id' do
   @publishers = Publisher.find(params['id'].to_i())

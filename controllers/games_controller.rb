@@ -18,14 +18,14 @@ end
 
 #edit
 get '/games/:id/edit' do
-  @games = Game.find(params["id"].to_i())
+  @games = Game.find(params['id'].to_i())
   @publishers = Publisher.all()
   erb(:"games/edit")
 end
 
 #show
 get '/games/:id' do
-  @games = Game.find(params["id"].to_i())
+  @games = Game.find(params['id'].to_i())
   erb(:"games/info")
 end
 
@@ -38,7 +38,7 @@ end
 
 #delete
 post '/games/:id/delete' do
-  game = Game.find(params["id"].to_i())
+  game = Game.find(params['id'].to_i())
   game.delete()
   redirect to("/games")
 end

@@ -9,3 +9,15 @@ get '/publishers' do
   @publishers = Publisher.all()
   erb(:"publishers/index")
 end
+
+#new
+get '/publishers/new' do
+  erb(:"publishers/new")
+end
+
+#save
+post '/publishers' do
+  publisher = Publisher.new(params)
+  publisher.save()
+  redirect to ("/publishers")
+end

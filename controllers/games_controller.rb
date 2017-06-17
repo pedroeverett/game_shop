@@ -22,6 +22,13 @@ get '/games/:id' do
   erb(:"games/info")
 end
 
+#edit
+get 'games/:id/edit' do
+  @games = Game.find(params['id'].to_i)
+  erb(:"games/edit")
+end
+
+
 #save
 post '/games' do
   game = Game.new(params)

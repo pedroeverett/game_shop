@@ -28,10 +28,16 @@ get 'games/:id/edit' do
   erb(:"games/edit")
 end
 
-
 #save
 post '/games' do
   game = Game.new(params)
   game.save()
-  redirect to ("/games")
+  redirect to("/games")
+end
+
+#update
+post '/games/:id' do
+  game = Game.new(params)
+  game.update()
+  redirect to("/games/#{params(id)}")
 end

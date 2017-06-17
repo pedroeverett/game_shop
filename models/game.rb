@@ -17,6 +17,15 @@ class Game
     @id = game.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE games SET 
+          name = '#{@name}',
+          quantity = '#{@quantity}'
+          publisher_id = '#{@publisher_id}'
+          WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def publisher()
     sql = "SELECT publishers.* FROM publishers WHERE id = #{@publisher_id}"
     result = SqlRunner.run(sql)

@@ -20,7 +20,7 @@ class Game
   def update()
     sql = "UPDATE games SET 
           name = '#{@name}',
-          quantity = '#{@quantity}'
+          quantity = '#{@quantity}',
           publisher_id = '#{@publisher_id}'
           WHERE id = #{@id}"
     SqlRunner.run(sql)

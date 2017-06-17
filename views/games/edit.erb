@@ -1,0 +1,20 @@
+<form method="post" action="/games/<%= @games.id %>">
+  <label for="game-name">Name: </label>
+  <input id="game-name" type="text" name="name" value="<%= @games.name %>">
+
+  <label for="game-quantity">Quantity: </label>
+  <input id="game-quantity" type="number" name="quantity" value="<%= @games.quantity %>">
+
+  <label for="game-publisher">Publisher: </label>
+    <select id="game-publisher" name="publisher_id">
+     
+      <% for publisher in @publishers %>
+        <option value = "<%= publisher.id %>" <%= "selected" if @games.publisher_id() == publisher.id %> ><%= publisher.name %></option>
+      <% end %>
+
+    </select>
+
+
+  
+<input type="submit" name="Save Changes">
+</form>

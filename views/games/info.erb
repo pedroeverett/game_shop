@@ -4,3 +4,9 @@
   <p>Quantity: <%= @games.quantity %></p>
   <p>Publisher: <%= @games.publisher %></p>
 </div>
+
+<p><a href="/games/<%= @games.id %>/edit">Edit Game</a></p>
+
+<form method="post" action="/games/<%= @games.id %>/delete">
+  <input type="submit" value="Delete Game">
+</form>

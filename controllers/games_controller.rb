@@ -16,16 +16,17 @@ get '/games/new' do
   erb(:"games/new")
 end
 
-#show
-get '/games/:id' do
-  @games = Game.find(params['id'].to_i())
-  erb(:"games/info")
+#edit
+get '/games/:id/edit' do
+  @games = Game.find(params["id"].to_i())
+  @publishers = Publisher.all()
+  erb(:"games/edit")
 end
 
-#edit
-get 'games/:id/edit' do
-  @games = Game.find(params['id'].to_i())
-  erb(:"games/edit")
+#show
+get '/games/:id' do
+  @games = Game.find(params["id"].to_i())
+  erb(:"games/info")
 end
 
 #save
@@ -35,16 +36,17 @@ post '/games' do
   redirect to("/games")
 end
 
+#delete
+post '/games/:id/delete' do
+  game = Game.find(params["id"].to_i())
+  game.delete()
+  redirect to("/games")
+end
+
 #update
 post '/games/:id' do
   game = Game.new(params)
   game.update()
-  redirect to("/games/#{params(id)}")
+  redirect to("/games/#{params["id"]}")
 end
 
-#delete
-post '/games/:id/delete' do
-  game = Game.find(params['id'].to_i())
-  game.delete()
-  redirect to("/games")
-end

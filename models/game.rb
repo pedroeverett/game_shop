@@ -26,6 +26,11 @@ class Game
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM games WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def publisher()
     sql = "SELECT publishers.* FROM publishers WHERE id = #{@publisher_id}"
     result = SqlRunner.run(sql)

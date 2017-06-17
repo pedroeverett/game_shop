@@ -1,0 +1,6 @@
+<form method="post" action="/publishers/<%= @publishers.id %>">
+  <label for="publisher-name">Name: </label>
+  <input id="publisher-name" type="text" name="name" value="<%= @publishers.name  %>">
+
+  <input type="submit" value="Save Changes">
+</form>

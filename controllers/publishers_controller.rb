@@ -42,7 +42,7 @@ post '/publishers/:id/delete' do
 end
 
 #update
-post '/publishers/:id'
+post '/publishers/:id' do
   publisher = Publisher.new(params)
   publisher.update()
   redirect to("/publishers/#{params["id"]}")

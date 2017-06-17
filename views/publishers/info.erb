@@ -2,3 +2,9 @@
 <div>
   <p>Name: <%= @publishers.name %></p>
 </div>
+
+<a href="/publishers/<%= @publishers.id %>/edit">Edit Publisher</a>
+
+<form method="post" action="/publishers/<%= @publishers.id %>/delete">
+  <input type="submit" value="Delete Publisher">
+</form>

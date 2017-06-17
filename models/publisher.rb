@@ -17,12 +17,12 @@ class Publisher
 
   def update()
     sql = "UPDATE publishers SET
-          name = '#{@name}'"
+          name = '#{@name}' WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
   def delete()
-    sql = "DELETE * FROM publishers WHERE id = #{@id}"
+    sql = "DELETE FROM publishers WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

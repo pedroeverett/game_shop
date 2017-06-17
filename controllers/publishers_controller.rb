@@ -33,3 +33,10 @@ post '/publishers' do
   publisher.save()
   redirect to ("/publishers")
 end
+
+#delete
+post '/publishers/:id/delete' do
+  publisher = Publisher.find(params['id'].to_i())
+  publisher.delete()
+  redirect to("/publishers")
+end

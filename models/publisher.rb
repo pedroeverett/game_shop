@@ -29,4 +29,12 @@ class Publisher
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM publishers WHERE id = #{id}"
+    publisher = SqlRunner.run(sql).first
+    result = Publisher.new(publisher)
+    return result
+  end
+
+
 end

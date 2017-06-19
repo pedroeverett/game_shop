@@ -15,4 +15,11 @@ class Genre
     @id = genre.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM genres"
+    genres = SqlRunner.run(sql)
+    result = genres.map{ |genre| Genre.new(genre)}
+    return result
+  end
+
 end

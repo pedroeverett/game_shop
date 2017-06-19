@@ -48,6 +48,14 @@ class Game
     return publisher.name
   end
 
+  def genre()
+    sql = "SELECT genres.* FROM genres WHERE id = #{@genre_id}"
+    result = SqlRunner.run(sql)
+    genre_info = result[0]
+    genre = Genre.new(genre_info)
+    return genre.name
+  end
+
   def self.all()
     sql = "SELECT * FROM games"
     games = SqlRunner.run(sql)

@@ -1,4 +1,4 @@
-require_relative('../db/sqlrunner.rb')
+require_relative('../db/sql_runner.rb')
 
 class Genre
 
@@ -6,7 +6,7 @@ class Genre
 
   def initialize(options)
     @id = options['id'].to_i
-    @name = options['name'].to_i
+    @name = options['name']
   end
 
   def save()

@@ -6,6 +6,7 @@
   <p>Genre: <%= @games.genre %></p>
   <p>Cost Price: £<%= @games.cost_price %></p>
   <p>Sell Price: £<%= @games.sell_price %></p>
+  <p>Markup: <%= @games.markup() %>%</p>
 </div>
 <div>
   <img src="<%= @games.url %>">

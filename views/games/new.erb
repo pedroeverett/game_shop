@@ -11,5 +11,22 @@
       <option value = "<%= publisher.id %>"><%= publisher.name %></option>
     <% end %>
   </select>
+
+  <label for="select-genre">Select Genre: </label>
+  <select id="select-genre" name="genre_id">
+    <% for genre in @genres %>
+      <option value = "<%= genre.id %>"><%= genre.name %></option>
+    <% end %>  
+  </select>
+
+  <label for="game-cost_price">Cost Price: £</label>
+  <input id="game-cost_price" type="number" name="cost_price">
+
+  <label for="game-sell_price">Sell Price: £</label>
+  <input id="game-sell_price" type="number" name="sell_price">
+
+  <label for="game-url">Image Url: </label>
+  <input id="game-url" type="text" name="url">
+
   <input type="submit" value="Add Game">
 </form>

@@ -4,17 +4,29 @@
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Quantity</th>
-    <th></th>
     <th>Publisher</th>
+    <th></th>
+    <th>Genre</th>
+    <th></th>
+    <th>Cost Price</th>
+    <th></th>
+    <th>Sell Price</th>
+    <th></th>
+    <th>Quantity</th>
   </tr>
   <% for game in @games %>
   <tr>
     <td><a href="/games/<%= game.id %>"><%= game.name  %></a></td>
     <td>|</td>
-    <td><%= game.quantity %></td>
-    <td>|</td>
     <td><%= game.publisher %></td>
+    <td>|</td>
+    <td><%= game.genre %></td>
+    <td>|</td>
+    <td><%= game.cost_price %></td>
+    <td>|</td>
+    <td><%= game.sell_price %></td>
+    <td>|</td>
+    <td><%= game.quantity %></td>
   </tr>
   <% end %>
 </table>

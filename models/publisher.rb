@@ -18,7 +18,8 @@ class Publisher
   end
 
   def save()
-    sql = "INSERT INTO publishers (name, address, city, country, post_code, phone, website, email) VALUES ('#{@name}', '#{@address}', '#{@city}', '#{@country}', '#{@post_code}', '#{@phone}', '#{@website}', '#{@email}') RETURNING *"
+    sql = "INSERT INTO publishers (name, address, city, country, post_code, phone, website, email) 
+    VALUES ('#{@name}', '#{@address}', '#{@city}', '#{@country}', '#{@post_code}', '#{@phone}', '#{@website}', '#{@email}') RETURNING *"
     publisher = SqlRunner.run(sql)
     @id = publisher.first()['id'].to_i
   end

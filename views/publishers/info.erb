@@ -1,6 +1,13 @@
 <h1>Publisher Details</h1>
 <div>
   <p>Name: <%= @publishers.name %></p>
+  <p>Address: <%= @publishers.address %></p>
+  <p>City: <%= @publishers.city %></p>
+  <p>Country: <%= @publishers.country %></p>
+  <p>Post Code: <%= @publishers.post_code %></p>
+  <p>Phone: <%= @publishers.phone %></p>
+  <p>Website: <%= @publishers.website %></p>
+  <p>Email: <%= @publishers.email %></p>
 </div>
 
 <a href="/publishers/<%= @publishers.id %>/edit">Edit Publisher</a>

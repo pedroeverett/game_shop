@@ -11,9 +11,24 @@
       <% for publisher in @publishers %>
         <option value = "<%= publisher.id %>" <%= "selected" if @games.publisher_id() == publisher.id %> ><%= publisher.name %></option>
       <% end %>
-
     </select>
 
+  <label for="game-genre"> Genre: </label>
+    <select id="game-genre" name="genre_id">
+      <% for genre in @genres %>
+        <option value = "<%= genre.id %>" <%= "selected" if @games.genre_id() == genre.id %> ><%= genre.name %>         
+        </option>
+      <% end %>   
+    </select>
+
+    <label for="game-cost_price">Cost Price: </label>
+    <input id="game-cost_price" type="number" name="cost_price" value="<%= @games.cost_price %>">
+
+    <label for="game-sell_price">Sell Price: </label>
+    <input id="game-sell_price" type="number" name="sell_price" value="<%= @games.sell_price %>">
+
+    <label for="game-url">Image Url: </label>
+    <input id="game-url" type="text" name="url" value="<%= @games.url %>">
 
   
 <input type="submit" name="Save Changes">

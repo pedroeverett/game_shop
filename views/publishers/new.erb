@@ -1,34 +1,52 @@
 <div class="boxes_big">
   <div class="boxes">
+    <table class="center">
+      <form method="post" action="/publishers">
+        <tr>
+          <td>
+            <label for="publisher-name">Name: </label>
+            <input id="publisher-name" type="text" name="name">
+          </td>
+          <td>
+            <label for="publisher-address">Address: </label>
+            <input id="publisher-address" type="text" name="address">
+          </td>
 
-    <form method="post" action="/publishers">
+          <td>
+            <label for="publisher-city">City: </label>
+            <input id="publisher-city" type="text" name="city">
+          </td>
+          <td>
+            <label for="publisher-country">Country: </label>
+            <input id="publisher-country" type="text" name="country">
+          </td>
+        </tr>
 
-      <label for="publisher-name">Name: </label>
-      <input id="publisher-name" type="text" name="name">
-
-      <label for="publisher-address">Address: </label>
-      <input id="publisher-address" type="text" name="address">
-
-      <label for="publisher-city">City: </label>
-      <input id="publisher-city" type="text" name="city">
-
-      <label for="publisher-country">Country: </label>
-      <input id="publisher-country" type="text" name="country">
-
-      <label for="publisher-post_code">Post Code: </label>
-      <input id="publisher-post_code" type="text" name="post_code">
-
-      <label for="publisher-phone">Phone: </label>
-      <input id="publisher-phone" type="text" name="phone">
-
-      <label for="publisher-website">Website: </label>
-      <input id="publisher-website" type="text" name="website">
-
-      <label for="publisher-email">Email: </label>
-      <input id="publisher-email" type="text" name="email">
-
-      <input class="btn" type="submit" value="Add Publisher">
-    </form>
+        <tr>
+          <td>
+            <label for="publisher-post_code">Post Code: </label>
+            <input id="publisher-post_code" type="text" name="post_code">
+          </td>
+          <td>
+            <label for="publisher-phone">Phone: </label>
+            <input id="publisher-phone" type="text" name="phone">
+          </td>
+          <td>
+            <label for="publisher-website">Website: </label>
+            <input id="publisher-website" type="text" name="website">
+          </td>
+          <td>
+            <label for="publisher-email">Email: </label>
+            <input id="publisher-email" type="text" name="email">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="btn" type="submit" value="Add Publisher">
+          </td>
+        </tr>
+      </form>
+    </table>
   </div>
 </div>
 

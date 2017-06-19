@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
+require_relative('../models/genre.rb')
 
 #index
 get '/games' do
@@ -13,6 +14,7 @@ end
 #new
 get '/games/new' do
   @publishers = Publisher.all()
+  @genres = Genre.all()
   erb(:"games/new")
 end
 
@@ -20,6 +22,7 @@ end
 get '/games/:id/edit' do
   @games = Game.find(params['id'].to_i())
   @publishers = Publisher.all()
+  @genres = Genre.all()
   erb(:"games/edit")
 end
 

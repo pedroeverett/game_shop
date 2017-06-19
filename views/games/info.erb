@@ -3,10 +3,18 @@
   <p>Name: <%= @games.name %></p>
   <p>Quantity: <%= @games.quantity %></p>
   <p>Publisher: <%= @games.publisher %></p>
+  <p>Genre: <%= @games.genre %></p>
+  <p>Cost Price: £<%= @games.cost_price %></p>
+  <p>Sell Price: £<%= @games.sell_price %></p>
+</div>
+<div>
+  <img src="<%= @games.url %>">
 </div>
 
+<div>
 <p><a href="/games/<%= @games.id %>/edit">Edit Game</a></p>
 
 <form method="post" action="/games/<%= @games.id %>/delete">
   <input type="submit" value="Delete Game">
 </form>
+</div>

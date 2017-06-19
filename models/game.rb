@@ -8,7 +8,7 @@ class Game
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
     @publisher_id = options['publisher_id'].to_i
     @genre_id = options['genre_id'].to_i
     @cost_price = options['cost_price'].to_f
@@ -61,6 +61,16 @@ class Game
     markup = (margin * 100) / @cost_price
     return markup.to_f.round(2)
   end
+
+  def color()
+    if @quantity >= 5 
+      result = "green"
+    else
+      result = "red"
+    end
+    return result.to_s
+  end
+
 
   def self.all()
     sql = "SELECT * FROM games"

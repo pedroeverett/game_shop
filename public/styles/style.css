@@ -37,6 +37,14 @@ body {
   padding: 100px;
 }
 
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
 h1 {
   text-align: center;
   color: orange;

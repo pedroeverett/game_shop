@@ -32,7 +32,8 @@
         <td>|</td>
         <td><%= game.markup() %>%</td>
         <td>|</td>
-        <td><%= game.quantity %></td>
+        <td class="<%= game.color() %>">
+                <%= game.quantity %></td>
       </tr>
       <% end %>
     </table>

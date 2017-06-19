@@ -1,4 +1,7 @@
+
 <h1>Publisher Details</h1>
+<div class="boxes_big">
+  <div class="boxes">
 <div>
   <p>Name: <%= @publishers.name %></p>
   <p>Address: <%= @publishers.address %></p>
@@ -9,9 +12,20 @@
   <p>Website: <%= @publishers.website %></p>
   <p>Email: <%= @publishers.email %></p>
 </div>
+</div>
+</div>
 
-<a href="/publishers/<%= @publishers.id %>/edit">Edit Publisher</a>
-
-<form method="post" action="/publishers/<%= @publishers.id %>/delete">
-  <input type="submit" value="Delete Publisher">
+<table class="center">
+<tr>
+<td>
+<form method="get" action="/publishers/<%= @publishers.id %>/edit">
+  <input class="btn" type="submit" value="Edit Publisher">
 </form>
+</td>
+<td>
+<form method="post" action="/publishers/<%= @publishers.id %>/delete">
+  <input class="btn" type="submit" value="Delete Publisher">
+</form>
+</td>
+</tr>
+</table>

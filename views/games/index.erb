@@ -1,38 +1,47 @@
 <h1>Games</h1>
+<div class="boxes_big">
+  <div class="boxes">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Publisher</th>
-    <th></th>
-    <th>Genre</th>
-    <th></th>
-    <th>Cost Price</th>
-    <th></th>
-    <th>Sell Price</th>
-    <th></th>
-    <th>Markup</th>
-    <th></th>
-    <th>Quantity</th>
-  </tr>
-  <% for game in @games %>
-  <tr>
-    <td><a href="/games/<%= game.id %>"><%= game.name  %></a></td>
-    <td>|</td>
-    <td><%= game.publisher %></td>
-    <td>|</td>
-    <td><%= game.genre %></td>
-    <td>|</td>
-    <td>£<%= game.cost_price %></td>
-    <td>|</td>
-    <td>£<%= game.sell_price %></td>
-    <td>|</td>
-    <td><%= game.markup() %>%</td>
-    <td>|</td>
-    <td><%= game.quantity %></td>
-  </tr>
-  <% end %>
+    <table class="center">
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Publisher</th>
+        <th></th>
+        <th>Genre</th>
+        <th></th>
+        <th>Cost Price</th>
+        <th></th>
+        <th>Sell Price</th>
+        <th></th>
+        <th>Markup</th>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <% for game in @games %>
+      <tr>
+        <td><a href="/games/<%= game.id %>"><%= game.name  %></a></td>
+        <td>|</td>
+        <td><%= game.publisher %></td>
+        <td>|</td>
+        <td><%= game.genre %></td>
+        <td>|</td>
+        <td>£<%= game.cost_price %></td>
+        <td>|</td>
+        <td>£<%= game.sell_price %></td>
+        <td>|</td>
+        <td><%= game.markup() %>%</td>
+        <td>|</td>
+        <td><%= game.quantity %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<table class="center">
+<tr><td>
+<form method="get" action="/games/new">
+  <input class="btn" type="submit" value="Add New Game">
+<tr><td>
+</form>
 </table>
-
-<p><a href="/games/new">Add New Game</a></p>

@@ -1,5 +1,7 @@
 <h1>Game Details</h1>
-<div>
+
+<div class="boxes_big2">
+  <div class="boxes_small1">
   <p>Name: <%= @games.name %></p>
   <p>Quantity: <%= @games.quantity %></p>
   <p>Publisher: <%= @games.publisher %></p>
@@ -8,14 +10,22 @@
   <p>Sell Price: £<%= @games.sell_price %></p>
   <p>Markup: <%= @games.markup() %>%</p>
 </div>
-<div>
+<div class="boxes_small2">
   <img src="<%= @games.url %>">
 </div>
-
-<div>
-<p><a href="/games/<%= @games.id %>/edit">Edit Game</a></p>
-
-<form method="post" action="/games/<%= @games.id %>/delete">
-  <input type="submit" value="Delete Game">
-</form>
 </div>
+
+<table class="center">
+<tr>
+<td>
+<form method="get" action="/games/<%= @games.id %>/edit">
+  <input class="btn" type="submit" value="Edit Game">
+</form>
+</td>
+<td>
+<form method="post" action="/games/<%= @games.id %>/delete">
+  <input class="btn" type="submit" value="Delete Game">
+</form>
+</td>
+</tr>
+</table>

@@ -1,14 +1,22 @@
 <h1>Publishers</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% for publisher in @publishers %>
-  <tr>
-    <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></td>
-  </tr>
-  <% end %>
+<div class="boxes_publishers">
+  <div class="boxes">
+    <table class="center">
+      
+      <% for publisher in @publishers %>
+      <tr>
+        <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<table class="center">
+<tr>
+<td>
+<form method="get" action="/publishers/new">
+  <input class="btn" type="submit" value="Add New Publisher">
+</form>
+</td>
+</tr>
 </table>
-
-<p><a href="/publishers/new">Add New Publisher</a></p>

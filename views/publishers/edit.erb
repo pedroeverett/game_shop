@@ -1,3 +1,5 @@
+<div class="boxes_big">
+  <div class="boxes">
 <form method="post" action="/publishers/<%= @publishers.id %>">
   <label for="publisher-name">Name: </label>
   <input id="publisher-name" type="text" name="name" value="<%= @publishers.name  %>">
@@ -23,5 +25,7 @@
   <label for="publisher-email">Email:</label>
   <input id="publisher-email" type="text" name="email" value="<%= @publishers.email %>">
 
-  <input type="submit" value="Save Changes">
+  <input class="btn" type="submit" value="Save Changes">
 </form>
+</div>
+</div>

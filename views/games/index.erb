@@ -12,6 +12,8 @@
     <th></th>
     <th>Sell Price</th>
     <th></th>
+    <th>Markup</th>
+    <th></th>
     <th>Quantity</th>
   </tr>
   <% for game in @games %>
@@ -25,6 +27,8 @@
     <td>£<%= game.cost_price %></td>
     <td>|</td>
     <td>£<%= game.sell_price %></td>
+    <td>|</td>
+    <td><%= game.markup() %>%</td>
     <td>|</td>
     <td><%= game.quantity %></td>
   </tr>

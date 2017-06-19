@@ -56,6 +56,12 @@ class Game
     return genre.name
   end
 
+  def markup()
+    margin = @sell_price - @cost_price
+    markup = (margin * 100) / @cost_price
+    return markup.to_f.round(2)
+  end
+
   def self.all()
     sql = "SELECT * FROM games"
     games = SqlRunner.run(sql)

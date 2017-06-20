@@ -5,7 +5,21 @@
   <p>Name: <%= @games.name %></p>
   <p>Publisher: <%= @games.publisher %></p>
   <p>Genre: <%= @games.genre %></p>
-  <p>Platforms: <%= @games.platforms() %></p>
+  <table class="center">
+    <tr>
+      <th>Platform</th>
+      <th></th>
+      <th>Quantity</th>
+    </tr>
+    <% for stock in @stocks %>
+    <tr>
+      <td><%= stock.platform %></td>
+      <td>|</td>
+      <td class="<%= stock.color() %>">
+              <%= stock.quantity %></td>
+    </tr>
+    <% end %>
+  </table>
 </div>
 <div class="boxes_small2">
   <img src="<%= @games.image() %>">

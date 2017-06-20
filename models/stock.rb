@@ -65,18 +65,29 @@ class Stock
   end
 
   def self.all()
-    sql = "SELECT * FROM stocks"
+    sql = " SELECT * FROM stocks
+      INNER JOIN games
+      ON games.id = stocks.game_id
+      ORDER BY name ASC"
     stocks = SqlRunner.run(sql)
     result = stocks.map{ |stock| Stock.new(stock)}
     return result
   end
 
   def self.all_low()
-    sql = "SELECT * FROM stocks WHERE quantity < 5"
+    sql = "SELECT * FROM stocks WHERE quantity < 5 ORDER BY quantity ASC"
     stocks = SqlRunner.run(sql)
     result = stocks.map{ |stock| Stock.new(stock)}
     return result
   end
+
+  def self.find_all_games(id)
+    sql = "SELECT * FROM stocks WHERE game_id = #{id}"
+    stocks = SqlRunner.run(sql)
+    result = stocks.map{ |stock| Stock.new(stock)}
+    return result
+  end
+
 
   def self.delete_all()
     sql = "DELETE FROM stocks"

@@ -8,11 +8,15 @@
       <tr>
         <th>Game</th>
         <th></th>
+        <th>Platform</th>
+        <th></th>
         <th>Quantity</th>
       </tr>
       <% for stock in @stocks %>
       <tr>
         <td><%= stock.game  %></a></td>
+        <td>|</td>
+        <td><%= stock.platform %></td>
         <td>|</td>
         <td class="<%= stock.color() %>">
                 <%= stock.quantity %></td>

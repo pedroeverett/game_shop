@@ -50,19 +50,7 @@ class Game
     genre = Genre.new(genre_info)
     return genre.name
   end
-
-  def platforms()
-    sql = "SELECT platforms.name FROM platforms 
-    INNER JOIN stocks
-    ON platforms.id = stocks.platform_id
-    WHERE game_id = #{@id}"
-    platforms = SqlRunner.run(sql)
-    # result = platforms.map{ |platform| Platform.new(platform)}
-    result = platforms.map{|platform| platform[:name] }
-    return result
-  end
   
-
   def image()
     if @url.empty?
       image = "/images/no_image.png"
@@ -73,7 +61,7 @@ class Game
   end
 
   def self.all()
-    sql = "SELECT * FROM games"
+    sql = "SELECT * FROM games ORDER BY name ASC"
     games = SqlRunner.run(sql)
     result = games.map{ |game| Game.new(game)}
     return result

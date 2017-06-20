@@ -31,6 +31,7 @@ end
 #show
 get '/games/:id' do
   @games = Game.find(params['id'].to_i())
+  @stocks = Stock.find_all_games(params['id'].to_i())
   erb(:"games/info")
 end
 

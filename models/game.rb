@@ -94,6 +94,11 @@ class Game
     return result
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM games"
+    SqlRunner.run(sql)
+  end
+
 
 
 end

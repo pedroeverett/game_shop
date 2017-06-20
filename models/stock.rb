@@ -40,6 +40,14 @@ class Stock
     return game.name
   end
 
+  def platform()
+    sql = "RETURN platform.* FROM platforms WHERE id = #{@platform_id}"
+    result = SqlRunner.run(sql)
+    platform_info = result[0]
+    platform = Platform.new(platform_info)
+    return platform.name
+  end
+
   def markup()
     margin = @sell_price - @cost_price
     markup = (margin * 100) / @cost_price

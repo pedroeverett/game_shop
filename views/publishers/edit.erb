@@ -1,31 +1,49 @@
 <div class="boxes_big">
   <div class="boxes">
-<form method="post" action="/publishers/<%= @publishers.id %>">
-  <label for="publisher-name">Name: </label>
-  <input id="publisher-name" type="text" name="name" value="<%= @publishers.name  %>">
-
-  <label for="publisher-address">Address:</label>
-  <input id="publisher-address" type="text" name="address" value="<%= @publishers.address %>">
-
-  <label for="publisher-city">City:</label>
-  <input id="publisher-city" type="text" name="city" value="<%= @publishers.city %>">
-
-  <label for="publisher-country">Country:</label>
-  <input id="publisher-country" type="text" name="country" value="<%= @publishers.country %>">
-
-  <label for="publisher-post_code">Post Code:</label>
-  <input id="publisher-post_code" type="text" name="post_code" value="<%= @publishers.post_code %>">
-
-  <label for="publisher-phone">Phone:</label>
-  <input id="publisher-phone" type="text" name="phone" value="<%= @publishers.phone %>">
-
-  <label for="publisher-website">Website:</label>
-  <input id="publisher-website" type="text" name="website" value="<%= @publishers.website %>">
-
-  <label for="publisher-email">Email:</label>
-  <input id="publisher-email" type="text" name="email" value="<%= @publishers.email %>">
-
-  <input class="btn" type="submit" value="Save Changes">
-</form>
-</div>
+    <table class="center">
+      <form method="post" action="/publishers/<%= @publishers.id %>">
+        <tr>
+          <td>
+            <label for="publisher-name">Name: </label>
+            <input id="publisher-name" type="text" name="name" value="<%= @publishers.name  %>">
+          </td>
+          <td>
+            <label for="publisher-address">Address:</label>
+            <input id="publisher-address" type="text" name="address" value="<%= @publishers.address %>">
+          </td>
+          <td>
+            <label for="publisher-city">City:</label>
+            <input id="publisher-city" type="text" name="city" value="<%= @publishers.city %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="publisher-country">Country:</label>
+            <input id="publisher-country" type="text" name="country" value="<%= @publishers.country %>">
+          </td>
+          <td>
+            <label for="publisher-post_code">Post Code:</label>
+            <input id="publisher-post_code" type="text" name="post_code" value="<%= @publishers.post_code %>">
+          </td>
+          <td>
+            <label for="publisher-phone">Phone:</label>
+            <input id="publisher-phone" type="text" name="phone" value="<%= @publishers.phone %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="publisher-website">Website:</label>
+            <input id="publisher-website" type="text" name="website" value="<%= @publishers.website %>">
+          </td>
+          <td>
+            <label for="publisher-email">Email:</label>
+            <input id="publisher-email" type="text" name="email" value="<%= @publishers.email %>">
+          </td>
+          <td>
+            <input class="btn" type="submit" value="Save Changes">
+          </td>
+        </tr>
+      </form>
+    </table>
+  </div>
 </div>

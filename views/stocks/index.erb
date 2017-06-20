@@ -1,0 +1,38 @@
+<h1>Stocks</h1>
+
+<div class="boxes_big">
+  <div class="boxes">
+
+    <table class="center">
+      <tr>
+        <th>Game</th>
+        <th></th>
+        <th>Platform</th>
+        <th></th>
+        <th>Cost Price</th>
+        <th></th>
+        <th>Sell Price</th>
+        <th></th>
+        <th>Markup</th>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <% for stock in @stocks %>
+      <tr>
+        <td><%= stock.game  %></a></td>
+        <td>|</td>
+        <td><%= stock.platform %></td>
+        <td>|</td>
+        <td>£<%= stock.cost_price %></td>
+        <td>|</td>
+        <td>£<%= stock.sell_price %></td>
+        <td>|</td>
+        <td><%= stock.markup() %>%</td>
+        <td>|</td>
+        <td class="<%= stock.color() %>">
+                <%= stock.quantity %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

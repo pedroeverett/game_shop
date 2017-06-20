@@ -2,10 +2,14 @@ require('pry-byebug')
 require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
+require_relative('../models/platform.rb')
+require_relative('../models/stock.rb')
 
 Publisher.delete_all()
 Genre.delete_all()
 Game.delete_all()
+Platform.delete_all()
+Stock.delete()
 
 publisher1 = Publisher.new({
   "name" => "Bethesda Softworks",

@@ -50,21 +50,6 @@ class Game
     return genre.name
   end
 
-  def markup()
-    margin = @sell_price - @cost_price
-    markup = (margin * 100) / @cost_price
-    return markup.to_f.round(2)
-  end
-
-  def color()
-    if @quantity >= 5 
-      result = "green"
-    else
-      result = "red"
-    end
-    return result.to_s
-  end
-
   def image()
     if @url.empty?
       image = "/images/no_image.png"

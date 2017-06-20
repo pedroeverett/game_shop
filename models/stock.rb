@@ -21,6 +21,17 @@ class Stock
     @id = stock.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE stocks SET
+    game_id = '#{@game_id}',
+    platform_id = '#{@platform_id}',
+    quantity = '#{@quantity}',
+    cost_price = '#{@cost_price}',
+    sell_price = '#{@sell_price}'
+    WHERE id = #{@id}
+    "
+  end
+
   def self.delete_all()
     sql = "DELETE FROM stocks"
     SqlRunner.run(sql)

@@ -2,22 +2,19 @@ require_relative('../db/sql_runner.rb')
 
 class Game
 
-  attr_accessor :name, :quantity, :publisher_id, :genre_id, :cost_price, :sell_price, :url
+  attr_accessor :name, :publisher_id, :genre_id, :url
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @quantity = options['quantity'].to_i
     @publisher_id = options['publisher_id'].to_i
     @genre_id = options['genre_id'].to_i
-    @cost_price = options['cost_price'].to_f
-    @sell_price = options['sell_price'].to_f
     @url = options['url']
   end
 
   def save()
-    sql = "INSERT INTO games (name, quantity, publisher_id, genre_id, cost_price, sell_price, url) VALUES ('#{@name}', #{@quantity}, #{@publisher_id}, #{@genre_id}, #{@cost_price}, #{@sell_price}, '#{@url}') RETURNING *"
+    sql = "INSERT INTO games (name, publisher_id, genre_id, url) VALUES ('#{@name}', #{@publisher_id}, #{@genre_id}, '#{@url}') RETURNING *"
     game = SqlRunner.run(sql)
     @id = game.first()['id'].to_i
   end
@@ -25,11 +22,8 @@ class Game
   def update()
     sql = "UPDATE games SET 
     name = '#{@name}',
-    quantity = '#{@quantity}',
     publisher_id = '#{@publisher_id}',
     genre_id = '#{@genre_id}',
-    cost_price = '#{@cost_price}',
-    sell_price = '#{@sell_price}',
     url = '#{@url}'
     WHERE id = #{@id}"
     SqlRunner.run(sql)
@@ -98,5 +92,5 @@ class Game
     sql = "DELETE FROM games"
     SqlRunner.run(sql)
   end
-  
+
 end

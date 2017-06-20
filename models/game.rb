@@ -71,6 +71,14 @@ class Game
     return result.to_s
   end
 
+  def image()
+    if @url.empty?
+      image = "/images/no_image.png"
+    else
+      image = @url
+    end
+    return image
+  end
 
   def self.all()
     sql = "SELECT * FROM games"

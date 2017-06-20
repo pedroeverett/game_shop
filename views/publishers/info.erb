@@ -9,8 +9,8 @@
   <p>Country: <%= @publishers.country %></p>
   <p>Post Code: <%= @publishers.post_code %></p>
   <p>Phone: <%= @publishers.phone %></p>
-  <p>Website: <%= @publishers.website %></p>
-  <p>Email: <%= @publishers.email %></p>
+  <p>Website: <a href="<%= @publishers.website %>" target="_blank"><%= @publishers.website %></a></p>
+  <p>Email: <a href="mailto:<%= @publishers.email %>"><%= @publishers.email %></a></p>
 </div>
 </div>
 </div>

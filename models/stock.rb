@@ -47,6 +47,13 @@ class Stock
     return result.to_s
   end
 
+  def self.all()
+    sql = "SELECT * FROM stocks"
+    stocks = SqlRunner.run(sql)
+    result = stocks.map{ |stock| Stock.new(stock)}
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM stocks"
     SqlRunner.run(sql)

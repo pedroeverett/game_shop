@@ -3,6 +3,10 @@ require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
 
+Publisher.delete_all()
+Genre.delete_all()
+Game.delete_all()
+
 publisher1 = Publisher.new({
   "name" => "Bethesda Softworks",
   "address" => "1370 Piccard Drive",

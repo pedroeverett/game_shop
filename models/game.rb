@@ -24,14 +24,14 @@ class Game
 
   def update()
     sql = "UPDATE games SET 
-          name = '#{@name}',
-          quantity = '#{@quantity}',
-          publisher_id = '#{@publisher_id}',
-          genre_id = '#{@genre_id}',
-          cost_price = '#{@cost_price}',
-          sell_price = '#{@sell_price}',
-          url = '#{@url}'
-          WHERE id = #{@id}"
+    name = '#{@name}',
+    quantity = '#{@quantity}',
+    publisher_id = '#{@publisher_id}',
+    genre_id = '#{@genre_id}',
+    cost_price = '#{@cost_price}',
+    sell_price = '#{@sell_price}',
+    url = '#{@url}'
+    WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
@@ -98,7 +98,5 @@ class Game
     sql = "DELETE FROM games"
     SqlRunner.run(sql)
   end
-
-
-
+  
 end

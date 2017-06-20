@@ -26,15 +26,15 @@ class Publisher
 
   def update()
     sql = "UPDATE publishers SET
-          name = '#{@name}',
-          address= '#{@address}', 
-          city = '#{@city}', 
-          country = '#{@country}', 
-          post_code = '#{@post_code}', 
-          phone = '#{@phone}', 
-          website = '#{@website}', 
-          email = '#{@email}'
-          WHERE id = #{@id}"
+    name = '#{@name}',
+    address= '#{@address}', 
+    city = '#{@city}', 
+    country = '#{@country}', 
+    post_code = '#{@post_code}', 
+    phone = '#{@phone}', 
+    website = '#{@website}', 
+    email = '#{@email}'
+    WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
@@ -62,6 +62,11 @@ class Publisher
     publisher = SqlRunner.run(sql).first
     result = Publisher.new(publisher)
     return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM publishers"
+    SqlRunner.run(sql)
   end
 
 

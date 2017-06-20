@@ -33,7 +33,7 @@ class Stock
   end
 
   def game()
-    sql = "RETURN game.* FROM games WHERE id = #{@game_id}"
+    sql = "SELECT games.* FROM games WHERE id = #{@game_id}"
     result = SqlRunner.run(sql)
     game_info = result[0]
     game = Game.new(game_info)
@@ -41,7 +41,7 @@ class Stock
   end
 
   def platform()
-    sql = "RETURN platform.* FROM platforms WHERE id = #{@platform_id}"
+    sql = "SELECT platforms.* FROM platforms WHERE id = #{@platform_id}"
     result = SqlRunner.run(sql)
     platform_info = result[0]
     platform = Platform.new(platform_info)

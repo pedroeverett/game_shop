@@ -12,7 +12,7 @@ class Platform
   def save()
     sql = "INSERT INTO platforms (name) VALUES ('#{@name}') RETURNING *"
     platform = SqlRunner.run(sql)
-    @id = platform.first()['is'].to_i
+    @id = platform.first()['id'].to_i
   end
 
   def self.delete_all()

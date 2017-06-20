@@ -9,7 +9,7 @@ Publisher.delete_all()
 Genre.delete_all()
 Game.delete_all()
 Platform.delete_all()
-Stock.delete()
+Stock.delete_all()
 
 publisher1 = Publisher.new({
   "name" => "Bethesda Softworks",

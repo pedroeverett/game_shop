@@ -26,6 +26,14 @@ CREATE TABLE platforms(
   name VARCHAR(255)
 );
 
+CREATE TABLE games(
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255),
+  publisher_id INT8 REFERENCES publishers(id) ON DELETE CASCADE,
+  genre_id INT8 REFERENCES genres(id) ON DELETE CASCADE,
+  url VARCHAR(255)
+);
+
 CREATE TABLE stocks(
   id SERIAL8 PRIMARY KEY,
   game_id INT8 REFERENCES games(id) ON DELETE CASCADE,
@@ -35,10 +43,3 @@ CREATE TABLE stocks(
   sell_price DECIMAL(8, 2)
 );
 
-CREATE TABLE games(
-  id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255),
-  publisher_id INT8 REFERENCES publishers(id) ON DELETE CASCADE,
-  genre_id INT8 REFERENCES genres(id) ON DELETE CASCADE,
-  url VARCHAR(255)
-);

@@ -5,7 +5,7 @@ require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
 require_relative('../models/stock.rb')
-require_relative('../models/plarform.rb')
+require_relative('../models/platform.rb')
 
 #index
 get '/stocks' do

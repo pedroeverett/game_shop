@@ -12,3 +12,8 @@ get '/stocks' do
   @stocks = Stock.all()
   erb(:"stocks/index")
 end
+
+get '/' do
+  @stocks = Stock.all_low()
+  erb(:index)
+end

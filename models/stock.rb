@@ -30,6 +30,7 @@ class Stock
     sell_price = '#{@sell_price}'
     WHERE id = #{@id}
     "
+    SqlRunner.run(sql)
   end
 
   def game()
@@ -65,6 +66,13 @@ class Stock
 
   def self.all()
     sql = "SELECT * FROM stocks"
+    stocks = SqlRunner.run(sql)
+    result = stocks.map{ |stock| Stock.new(stock)}
+    return result
+  end
+
+  def self.all_low()
+    sql = "SELECT * FROM stocks WHERE quantity < 5"
     stocks = SqlRunner.run(sql)
     result = stocks.map{ |stock| Stock.new(stock)}
     return result

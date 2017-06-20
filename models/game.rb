@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../db/sql_runner.rb')
 
 class Game
@@ -49,6 +50,18 @@ class Game
     genre = Genre.new(genre_info)
     return genre.name
   end
+
+  def platforms()
+    sql = "SELECT platforms.name FROM platforms 
+    INNER JOIN stocks
+    ON platforms.id = stocks.platform_id
+    WHERE game_id = #{@id}"
+    platforms = SqlRunner.run(sql)
+    # result = platforms.map{ |platform| Platform.new(platform)}
+    result = platforms.map{|platform| platform[:name] }
+    return result
+  end
+  
 
   def image()
     if @url.empty?

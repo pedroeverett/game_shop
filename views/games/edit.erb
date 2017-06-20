@@ -1,39 +1,54 @@
 <div class="boxes_big">
   <div class="boxes">
-    <form method="post" action="/games/<%= @games.id %>">
-      <label for="game-name">Name: </label>
-      <input id="game-name" type="text" name="name" value="<%= @games.name %>">
-
-      <label for="game-quantity">Quantity: </label>
-      <input id="game-quantity" type="number" name="quantity" value="<%= @games.quantity %>">
-
-      <label for="game-publisher">Publisher: </label>
-      <select id="game-publisher" name="publisher_id">
-       
-        <% for publisher in @publishers %>
-        <option value = "<%= publisher.id %>" <%= "selected" if @games.publisher_id() == publisher.id %> ><%= publisher.name %></option>
-        <% end %>
-      </select>
-
-      <label for="game-genre"> Genre: </label>
-      <select id="game-genre" name="genre_id">
-        <% for genre in @genres %>
-        <option value = "<%= genre.id %>" <%= "selected" if @games.genre_id() == genre.id %> ><%= genre.name %>         
-        </option>
-        <% end %>   
-      </select>
-
-      <label for="game-cost_price">Cost Price: £</label>
-      <input id="game-cost_price" type="number" name="cost_price" value="<%= @games.cost_price %>">
-
-      <label for="game-sell_price">Sell Price: £</label>
-      <input id="game-sell_price" type="number" name="sell_price" value="<%= @games.sell_price %>">
-
-      <label for="game-url">Image Url: </label>
-      <input id="game-url" type="text" name="url" value="<%= @games.url %>">
-
-      
-      <input class="btn" type="submit" name="Save Changes">
+    <table class="center">
+      <form method="post" action="/games/<%= @games.id %>">
+        <tr><td>
+          <label for="game-name">Name: </label>
+          <input id="game-name" type="text" name="name" value="<%= @games.name %>">
+        </td>
+        <td>
+          <label for="game-quantity">Quantity: </label>
+          <input id="game-quantity" type="number" name="quantity" value="<%= @games.quantity %>"> 
+        </td>
+        <td>
+          <label for="game-publisher">Publisher: </label>
+          <select id="game-publisher" name="publisher_id">
+           
+            <% for publisher in @publishers %>
+            <option value = "<%= publisher.id %>" <%= "selected" if @games.publisher_id() == publisher.id %> ><%= publisher.name %></option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="game-genre"> Genre: </label>
+          <select id="game-genre" name="genre_id">
+            <% for genre in @genres %>
+            <option value = "<%= genre.id %>" <%= "selected" if @games.genre_id() == genre.id %> ><%= genre.name %>         
+            </option>
+            <% end %>   
+          </select>
+        </td>
+        <td>
+          <label for="game-cost_price">Cost Price: £</label>
+          <input id="game-cost_price" type="number" name="cost_price" value="<%= @games.cost_price %>">
+        </td>
+        <td>
+          <label for="game-sell_price">Sell Price: £</label>
+          <input id="game-sell_price" type="number" name="sell_price" value="<%= @games.sell_price %>">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="game-url">Image Url: </label>
+          <input id="game-url" type="text" name="url" value="<%= @games.url %>">
+        </td>
+        <td>
+          <input class="btn" type="submit" name="Save Changes">
+        </td>
+      </tr>
     </form>
-  </div>
+  </table>
+</div>
 </div>

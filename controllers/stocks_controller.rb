@@ -19,6 +19,13 @@ get '/' do
   erb(:index)
 end
 
+#new
+get '/stocks/new' do
+  @games = Game.all()
+  @platforms = Platform.all()
+  erb(:"stocks/new")
+end
+
 #edit
 get '/stocks/:id/edit' do
   @stock = Stock.find(params['id'].to_i())

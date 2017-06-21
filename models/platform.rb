@@ -15,6 +15,13 @@ class Platform
     @id = platform.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM platforms ORDER BY ASC"
+    platforms = SqlRunner.run(sql)
+    result = platforms.map{ |platform| Platform.new(platform)}
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM platforms"
     SqlRunner.run(sql)

@@ -16,7 +16,7 @@ class Genre
   end
 
   def self.all()
-    sql = "SELECT * FROM genres"
+    sql = "SELECT * FROM genres ORDER BY name ASC"
     genres = SqlRunner.run(sql)
     result = genres.map{ |genre| Genre.new(genre)}
     return result

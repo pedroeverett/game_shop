@@ -4,11 +4,16 @@
       <form method="post" action="/games/<%= @games.id %>">
         <tr><td>
           <label for="game-name">Name: </label>
-          <input id="game-name" type="text" name="name" value="<%= @games.name %>">
+          <input id="game-name" type="text" name="name" style="width: 250px;" value="<%= @games.name %>">
         </td>
         <td>
-          <label for="game-quantity">Quantity: </label>
-          <input id="game-quantity" type="number" name="quantity" value="<%= @games.quantity %>"> 
+          <label for="game-genre"> Genre: </label>
+          <select id="game-genre" name="genre_id">
+            <% for genre in @genres %>
+            <option value = "<%= genre.id %>" <%= "selected" if @games.genre_id() == genre.id %> ><%= genre.name %>   
+            </option>
+            <% end %>   
+          </select>
         </td>
         <td>
           <label for="game-publisher">Publisher: </label>
@@ -22,27 +27,22 @@
       </tr>
       <tr>
         <td>
-          <label for="game-genre"> Genre: </label>
-          <select id="game-genre" name="genre_id">
-            <% for genre in @genres %>
-            <option value = "<%= genre.id %>" <%= "selected" if @games.genre_id() == genre.id %> ><%= genre.name %>         
-            </option>
-            <% end %>   
-          </select>
+        <label for="game-quantity">Quantity: </label>
+        <input id="game-quantity" type="number" name="quantity" style="width: 30px;" value="<%= @games.quantity %>">  
         </td>
         <td>
           <label for="game-cost_price">Cost Price: £</label>
-          <input id="game-cost_price" type="number" name="cost_price" value="<%= @games.cost_price %>">
+          <input id="game-cost_price" type="number" name="cost_price" style="width: 50px;" value="<%= @games.cost_price %>">
         </td>
         <td>
           <label for="game-sell_price">Sell Price: £</label>
-          <input id="game-sell_price" type="number" name="sell_price" value="<%= @games.sell_price %>">
+          <input id="game-sell_price" type="number" name="sell_price" style="width: 50px;" value="<%= @games.sell_price %>">
         </td>
       </tr>
       <tr>
         <td>
-          <label for="game-url">Image Url: </label>
-          <input id="game-url" type="text" name="url" value="<%= @games.url %>">
+          <label for="game-url">Image: </label>
+          <input id="game-url" type="text" name="url" style="width: 250px;" value="<%= @games.url %>">
         </td>
         <td>
           <input class="btn" type="submit" name="Save Changes">

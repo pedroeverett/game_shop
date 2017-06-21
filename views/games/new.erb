@@ -8,12 +8,14 @@
             <label for="game-name">Name: </label>
             <input id="game-name" type="text" name="name">
           </td>
+          <td>
           <label for="select-genre">Select Genre: </label>
           <select id="select-genre" name="genre_id">
             <% for genre in @genres %>
             <option value = "<%= genre.id %>"><%= genre.name %></option>
             <% end %>  
           </select>
+          </td>
           <td>
             <label for="select-publisher">Select Publisher: </label>
             <select id="select-publisher" name="publisher_id">
@@ -25,10 +27,8 @@
         </tr>
         <tr>
           <td>
-            <td>
               <label for="game-quantity">Quantity: </label>
               <input id="game-quantity" type="number" min="0"name="quantity">
-            </td>
           </td>
           <td>
             <label for="game-cost_price">Cost Price: £</label>

@@ -2,10 +2,13 @@
   <div class="boxes">
     <table class="center">
       <form method="post" action="/games/<%= @games.id %>">
-        <tr>
-        <td>
+        <tr><td>
           <label for="game-name">Name: </label>
           <input id="game-name" type="text" name="name" value="<%= @games.name %>">
+        </td>
+        <td>
+          <label for="game-quantity">Quantity: </label>
+          <input id="game-quantity" type="number" name="quantity" value="<%= @games.quantity %>"> 
         </td>
         <td>
           <label for="game-publisher">Publisher: </label>
@@ -16,6 +19,8 @@
             <% end %>
           </select>
         </td>
+      </tr>
+      <tr>
         <td>
           <label for="game-genre"> Genre: </label>
           <select id="game-genre" name="genre_id">
@@ -24,6 +29,14 @@
             </option>
             <% end %>   
           </select>
+        </td>
+        <td>
+          <label for="game-cost_price">Cost Price: £</label>
+          <input id="game-cost_price" type="number" name="cost_price" value="<%= @games.cost_price %>">
+        </td>
+        <td>
+          <label for="game-sell_price">Sell Price: £</label>
+          <input id="game-sell_price" type="number" name="sell_price" value="<%= @games.sell_price %>">
         </td>
       </tr>
       <tr>

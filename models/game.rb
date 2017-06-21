@@ -1,21 +1,23 @@
-require('pry-byebug')
 require_relative('../db/sql_runner.rb')
 
 class Game
 
-  attr_accessor :name, :publisher_id, :genre_id, :url
+  attr_accessor :name, :quantity, :publisher_id, :genre_id, :cost_price, :sell_price, :url
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @quantity = options['quantity'].to_i
     @publisher_id = options['publisher_id'].to_i
     @genre_id = options['genre_id'].to_i
+    @cost_price = options['cost_price'].to_f
+    @sell_price = options['sell_price'].to_f
     @url = options['url']
   end
 
   def save()
-    sql = "INSERT INTO games (name, publisher_id, genre_id, url) VALUES ('#{@name}', #{@publisher_id}, #{@genre_id}, '#{@url}') RETURNING *"
+    sql = "INSERT INTO games (name, quantity, publisher_id, genre_id, cost_price, sell_price, url) VALUES ('#{@name}', #{@quantity}, #{@publisher_id}, #{@genre_id}, #{@cost_price}, #{@sell_price}, '#{@url}') RETURNING *"
     game = SqlRunner.run(sql)
     @id = game.first()['id'].to_i
   end
@@ -23,8 +25,11 @@ class Game
   def update()
     sql = "UPDATE games SET 
     name = '#{@name}',
+    quantity = '#{@quantity}',
     publisher_id = '#{@publisher_id}',
     genre_id = '#{@genre_id}',
+    cost_price = '#{@cost_price}',
+    sell_price = '#{@sell_price}',
     url = '#{@url}'
     WHERE id = #{@id}"
     SqlRunner.run(sql)
@@ -50,7 +55,22 @@ class Game
     genre = Genre.new(genre_info)
     return genre.name
   end
-  
+
+  def markup()
+    margin = @sell_price - @cost_price
+    markup = (margin * 100) / @cost_price
+    return markup.to_f.round(2)
+  end
+
+  def color()
+    if @quantity >= 5 
+      result = "green"
+    else
+      result = "red"
+    end
+    return result.to_s
+  end
+
   def image()
     if @url.empty?
       image = "/images/no_image.png"
@@ -61,7 +81,7 @@ class Game
   end
 
   def self.all()
-    sql = "SELECT * FROM games ORDER BY name ASC"
+    sql = "SELECT * FROM games"
     games = SqlRunner.run(sql)
     result = games.map{ |game| Game.new(game)}
     return result
@@ -78,5 +98,5 @@ class Game
     sql = "DELETE FROM games"
     SqlRunner.run(sql)
   end
-
+  
 end

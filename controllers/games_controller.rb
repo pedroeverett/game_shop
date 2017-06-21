@@ -4,8 +4,6 @@ require('pry-byebug')
 require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
-require_relative('../models/stock.rb')
-require_relative('../models/platform.rb')
 
 #index
 get '/games' do
@@ -31,7 +29,6 @@ end
 #show
 get '/games/:id' do
   @games = Game.find(params['id'].to_i())
-  @stocks = Stock.find_all_games(params['id'].to_i())
   erb(:"games/info")
 end
 

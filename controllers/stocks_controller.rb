@@ -32,6 +32,13 @@ get '/stocks/:id/edit' do
   erb(:"stocks/edit")
 end
 
+#save
+post '/stocks' do
+  stock = Stock.new(params)
+  stock.save()
+  redirect to("/stocks")
+end
+
 #update
 post '/stocks/:id' do
   stock = Stock.new(params)

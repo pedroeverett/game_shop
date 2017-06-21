@@ -81,7 +81,7 @@ class Game
   end
 
   def self.all()
-    sql = "SELECT * FROM games"
+    sql = "SELECT * FROM games ORDER BY name ASC"
     games = SqlRunner.run(sql)
     result = games.map{ |game| Game.new(game)}
     return result

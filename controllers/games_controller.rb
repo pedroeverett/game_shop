@@ -4,6 +4,7 @@ require('pry-byebug')
 require_relative('../models/game.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
+require_relative('../models/video.rb')
 
 #index
 get '/games' do
@@ -14,6 +15,7 @@ end
 #main index
 get '/' do
   @games = Game.all_low()
+  @videos = Video.all()
   erb(:index)
 end
 

@@ -68,7 +68,7 @@ game1 = Game.new({
   "quantity" => 10,
   "publisher_id" => publisher1.id,
   "genre_id" =>  genre1.id,
-  "cost_price" =>  10.20,
+  "cost_price" =>  10.22,
   "sell_price" =>  15.55,
   "url" => "/images/Doom_Cover.jpg"
   })
@@ -79,7 +79,7 @@ game2 = Game.new({
   "quantity" => 5,
   "publisher_id" => publisher1.id,
   "genre_id" =>  genre1.id,
-  "cost_price" =>  11.20,
+  "cost_price" =>  11.25,
   "sell_price" =>  16.15,
   "url" => "/images/Wolfenstein_The_Old_Blood_cover.jpg"
   })
@@ -91,7 +91,7 @@ game3 = Game.new({
   "publisher_id" => publisher2.id,
   "genre_id" =>  genre2.id,
   "cost_price" =>  11.75,
-  "sell_price" =>  20.30,
+  "sell_price" =>  20.33,
   "url" => "/images/Grand_Theft_Auto_V.png"
   })
 game3.save()
@@ -101,8 +101,8 @@ game4 = Game.new({
   "quantity" => 2,
   "publisher_id" => publisher2.id,
   "genre_id" =>  genre3.id,
-  "cost_price" =>  8.20,
-  "sell_price" =>  14.00,
+  "cost_price" =>  8.28,
+  "sell_price" =>  14.55,
   "url" => "/images/Rockstar_Table_Tennis_Game_Cover.jpg"
   })
 game4.save()
@@ -112,8 +112,8 @@ game5 = Game.new({
   "quantity" => 7,
   "publisher_id" => publisher3.id,
   "genre_id" =>  genre4.id,
-  "cost_price" =>  3.20,
-  "sell_price" =>  10.40,
+  "cost_price" =>  3.22,
+  "sell_price" =>  10.43,
   "url" => "/images/Burnout_Paradise_Boxart.jpg"
   })
 game5.save()
@@ -123,8 +123,8 @@ game6 = Game.new({
   "quantity" => 3,
   "publisher_id" => publisher3.id,
   "genre_id" =>  genre1.id,
-  "cost_price" =>  7.20,
-  "sell_price" =>  13.60,
+  "cost_price" =>  7.22,
+  "sell_price" =>  13.65,
   "url" => "/images/Battlefield_Hardline.jpg"
   })
 game6.save()
@@ -134,8 +134,8 @@ game7 = Game.new({
   "quantity" => 4,
   "publisher_id" => publisher3.id,
   "genre_id" =>  genre4.id,
-  "cost_price" =>  5.70,
-  "sell_price" =>  8.30,
+  "cost_price" =>  5.74,
+  "sell_price" =>  8.32,
   "url" => "/images/fifa.jpg"
   })
 game7.save()

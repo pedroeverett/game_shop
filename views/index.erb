@@ -17,7 +17,7 @@
       </tr>
       <% for game in @games %>
       <tr>
-        <td><%= game.name  %></a></td>
+        <td><a href="/games/<%= game.id %>"><%= game.name  %></a></td>
         <td>|</td>
         <td class="<%= game.color() %>"><%= game.quantity %></td>
       </tr>

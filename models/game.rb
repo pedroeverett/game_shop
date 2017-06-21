@@ -87,6 +87,13 @@ class Game
     return result
   end
 
+  def self.all_low()
+    sql = "SELECT * FROM games WHERE quantity < 5 ORDER BY quantity ASC"
+    stocks = SqlRunner.run(sql)
+    result = stocks.map{ |stock| Game.new(stock)}
+    return result
+  end
+
   def self.find(id)
     sql = "SELECT * FROM games WHERE id = #{id}"
     game = SqlRunner.run(sql).first

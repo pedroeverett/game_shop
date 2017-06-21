@@ -11,6 +11,12 @@ get '/games' do
   erb(:"games/index")
 end
 
+#main index
+get '/' do
+  @games = Game.all_low()
+  erb(:index)
+end
+
 #new
 get '/games/new' do
   @publishers = Publisher.all()

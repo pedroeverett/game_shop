@@ -1,1 +1,22 @@
 <h1>Welcome to the Game Shop</h1>
+
+<div class="boxes_big">
+  <div class="boxes_small2">
+  <h2>Warning Stock Level Low</h2>
+
+    <table class="center">
+      <tr>
+        <th>Game</th>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <% for game in @games %>
+      <tr>
+        <td><%= game.name  %></a></td>
+        <td>|</td>
+        <td class="<%= game.color() %>"><%= game.quantity %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

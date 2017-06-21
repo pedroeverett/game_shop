@@ -128,3 +128,14 @@ game6 = Game.new({
   "url" => "/images/Battlefield_Hardline.jpg"
   })
 game6.save()
+
+game7 = Game.new({
+  "name" => "2010 FIFA World Cup South Africa",
+  "quantity" => 4,
+  "publisher_id" => publisher3.id,
+  "genre_id" =>  genre4.id,
+  "cost_price" =>  5.70,
+  "sell_price" =>  8.30,
+  "url" => "/images/fifa.jpg"
+  })
+game7.save()

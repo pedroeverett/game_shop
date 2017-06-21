@@ -51,7 +51,7 @@ class Publisher
   end
 
   def self.all()
-    sql = "SELECT * FROM publishers"
+    sql = "SELECT * FROM publishers ORDER BY name ASC"
     publishers = SqlRunner.run(sql)
     result = publishers.map{ |publisher| Publisher.new(publisher)}
     return result

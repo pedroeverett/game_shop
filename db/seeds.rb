@@ -63,6 +63,21 @@ genre4 = Genre.new({
   })
 genre4.save()
 
+genres = [
+  "Action",
+  "Adventure",
+  "Role-Playing",
+  "Simulation",
+  "Strategy",
+  "Party Game",
+  "Trivia Game"
+]
+
+genres.each do |genre|
+  newGenre = Genre.new({"name" => genre})
+  newGenre.save()
+end
+
 game1 = Game.new({
   "name" => "Doom",
   "quantity" => 10,

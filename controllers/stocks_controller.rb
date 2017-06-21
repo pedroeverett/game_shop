@@ -34,8 +34,9 @@ end
 
 #save
 post '/stocks' do
+  stocks = Stock.all() 
   stock = Stock.new(params)
-  stock.save()
+  stock.save_if(stocks)
   redirect to("/stocks")
 end
 

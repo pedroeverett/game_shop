@@ -16,7 +16,7 @@ class Platform
   end
 
   def self.all()
-    sql = "SELECT * FROM platforms ORDER BY ASC"
+    sql = "SELECT * FROM platforms ORDER BY name ASC"
     platforms = SqlRunner.run(sql)
     result = platforms.map{ |platform| Platform.new(platform)}
     return result

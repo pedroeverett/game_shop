@@ -4,34 +4,9 @@
   display: inline;
 }
 
-.boxes_big2 {
-  margin: 40px auto;
-  width: 100%;
-  display: inline;
-}
-
 .boxes_publishers {
   margin: 40px auto;
   width: 40%;
-}
-
-
-.boxes_small1 {
-  border: 2px solid Orange;
-  padding: 40px 0px;
-  margin: 5px 0px;
-  text-align: center;
-  width:45%; 
-  float:left;
-}
-
-.boxes_small2 {
-  border: 2px solid Orange;
-  padding: 40px 0px;
-  margin: 5px 0px;
-  text-align: center;
-  width:54%;
-  float:right;
 }
 
 .boxes {
@@ -39,4 +14,17 @@
   padding: 40px 0px;
   margin: 5px 0px;
   text-align: center;
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  margin: 2px;
+  border: 2px solid Orange;
+  text-align: center; 
 }

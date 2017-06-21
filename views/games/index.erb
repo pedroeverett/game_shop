@@ -1,7 +1,6 @@
 <h1>Games</h1>
 <div class="boxes_big">
   <div class="boxes">
-
     <table class="center">
       <tr>
         <th>Name</th>
@@ -32,17 +31,16 @@
         <td>|</td>
         <td><%= game.markup() %>%</td>
         <td>|</td>
-        <td class="<%= game.color() %>">
-                <%= game.quantity %></td>
+        <td class="<%= game.color() %>"><%= game.quantity %></td>
       </tr>
       <% end %>
     </table>
   </div>
 </div>
 <table class="center">
-<tr><td>
-<form method="get" action="/games/new">
-  <input class="btn" type="submit" value="Add New Game">
-<tr><td>
-</form>
-</table>
+  <tr><td>
+    <form method="get" action="/games/new">
+      <input class="btn" type="submit" value="Add New Game">
+      <tr><td>
+      </form>
+    </table>

@@ -17,4 +17,5 @@ table {
 
 table.center {
    margin: 0 auto; 
+   vertical-align: middle;
  }

@@ -1,32 +1,35 @@
 <h1>Game Details</h1>
 
-<div class="boxes_big2">
-  <div class="boxes_small1">
-  <p>Name: <%= @games.name %></p>
-  <p>Quantity: <%= @games.quantity %></p>
-  <p>Publisher: <%= @games.publisher %></p>
-  <p>Genre: <%= @games.genre %></p>
-  <p>Cost Price: £<%= @games.cost_price %></p>
-  <p>Sell Price: £<%= @games.sell_price %></p>
-  <p>Markup: <%= @games.markup() %>%</p>
-</div>
-<div class="boxes_small2">
-  <!-- <img src="<%= @games.url %>"> -->
-  <img src="<%= @games.image() %>">
-</div>
+<div class="row">
+  <div class="col">
+  <table class="center">
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td>Name: </td><td><%= @games.name %></td></tr>
+  <tr><td>Publisher: </td><td><%= @games.publisher %></td></tr>
+  <tr><td>Genre: </td><td><%= @games.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= @games.color() %>"><%= @games.quantity %></td></tr>
+  <tr><td>Cost Price: £</td><td><%= @games.cost_price %></td></tr>
+  <tr><td>Sell Price: £</td><td><%= @games.sell_price %></td></tr>
+  <tr><td>Markup: </td><td><%= @games.markup() %>%</td></tr>
+  </table>
+  </div>
+  <div class="col">
+   <img src="<%= @games.image() %>">
+ </div>
 </div>
 
 <table class="center">
-<tr>
-<td>
-<form method="get" action="/games/<%= @games.id %>/edit">
-  <input class="btn" type="submit" value="Edit Game">
-</form>
-</td>
-<td>
-<form method="post" action="/games/<%= @games.id %>/delete">
-  <input class="btn" type="submit" value="Delete Game">
-</form>
-</td>
-</tr>
+  <tr>
+    <td>
+      <form method="get" action="/games/<%= @games.id %>/edit">
+        <input class="btn" type="submit" value="Edit Game">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/games/<%= @games.id %>/delete">
+        <input class="btn" type="submit" value="Delete Game">
+      </form>
+    </td>
+  </tr>
 </table>

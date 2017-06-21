@@ -2,30 +2,30 @@
 <h1>Publisher Details</h1>
 <div class="boxes_big">
   <div class="boxes">
-<div>
-  <p>Name: <%= @publishers.name %></p>
-  <p>Address: <%= @publishers.address %></p>
-  <p>City: <%= @publishers.city %></p>
-  <p>Country: <%= @publishers.country %></p>
-  <p>Post Code: <%= @publishers.post_code %></p>
-  <p>Phone: <%= @publishers.phone %></p>
-  <p>Website: <a href="<%= @publishers.website %>" target="_blank"><%= @publishers.website %></a></p>
-  <p>Email: <a href="mailto:<%= @publishers.email %>"><%= @publishers.email %></a></p>
-</div>
-</div>
+    <div>
+      <p>Name: <%= @publishers.name %></p>
+      <p>Address: <%= @publishers.address %></p>
+      <p>City: <%= @publishers.city %></p>
+      <p>Country: <%= @publishers.country %></p>
+      <p>Post Code: <%= @publishers.post_code %></p>
+      <p>Phone: <%= @publishers.phone %></p>
+      <p>Website: <a href="<%= @publishers.website %>" target="_blank"><%= @publishers.website %></a></p>
+      <p>Email: <a href="mailto:<%= @publishers.email %>"><%= @publishers.email %></a></p>
+    </div>
+  </div>
 </div>
 
 <table class="center">
-<tr>
-<td>
-<form method="get" action="/publishers/<%= @publishers.id %>/edit">
-  <input class="btn" type="submit" value="Edit Publisher">
-</form>
-</td>
-<td>
-<form method="post" action="/publishers/<%= @publishers.id %>/delete">
-  <input class="btn" type="submit" value="Delete Publisher">
-</form>
-</td>
-</tr>
+  <tr>
+    <td>
+      <form method="get" action="/publishers/<%= @publishers.id %>/edit">
+        <input class="btn" type="submit" value="Edit Publisher">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/publishers/<%= @publishers.id %>/delete">
+        <input class="btn" type="submit" value="Delete Publisher">
+      </form>
+    </td>
+  </tr>
 </table>

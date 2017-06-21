@@ -1,8 +1,13 @@
 <h1>Welcome to the Game Shop</h1>
 
-<div class="boxes_big">
-  <div class="boxes_small2">
-  <h2>Warning Stock Level Low</h2>
+<div class="row">
+
+  <div class="col">
+    <iframe width="560" height="315" src="https:<%= @videos.shuffle[0] %>" frameborder="0"  allowfullscreen></iframe>
+  </div>
+
+  <div class="col">
+    <h2>Stock Level Warning</h2>
 
     <table class="center">
       <tr>
@@ -19,10 +24,4 @@
       <% end %>
     </table>
   </div>
-</div>
-
-<div class="boxes_big">
-  <div class="boxes_small1">
-    <iframe width="auto" height="auto" src="https:<%= @videos.shuffle[0] %>" frameborder="0" allowfullscreen></iframe>
-    </div>
 </div>

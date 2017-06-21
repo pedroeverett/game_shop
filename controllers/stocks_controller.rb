@@ -13,7 +13,21 @@ get '/stocks' do
   erb(:"stocks/index")
 end
 
+#main index
 get '/' do
   @stocks = Stock.all_low()
   erb(:index)
+end
+
+#edit
+get '/stocks/:id/edit' do
+  @stock = Stock.find(params['id'].to_i())
+  erb(:"stocks/edit")
+end
+
+#update
+post '/stocks/:id' do
+  stock = Stock.new(params)
+  stock.update()
+  redirect to("/stocks")
 end

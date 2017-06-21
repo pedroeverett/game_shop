@@ -23,8 +23,6 @@ class Stock
 
   def update()
     sql = "UPDATE stocks SET
-    game_id = '#{@game_id}',
-    platform_id = '#{@platform_id}',
     quantity = '#{@quantity}',
     cost_price = '#{@cost_price}',
     sell_price = '#{@sell_price}'
@@ -65,7 +63,7 @@ class Stock
   end
 
   def self.all()
-    sql = " SELECT * FROM stocks
+    sql = " SELECT stocks.*, games.name FROM stocks
       INNER JOIN games
       ON games.id = stocks.game_id
       ORDER BY name ASC"
@@ -78,6 +76,13 @@ class Stock
     sql = "SELECT * FROM stocks WHERE quantity < 5 ORDER BY quantity ASC"
     stocks = SqlRunner.run(sql)
     result = stocks.map{ |stock| Stock.new(stock)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM stocks WHERE id = #{id}"
+    stock = SqlRunner.run(sql).first
+    result = Stock.new(stock)
     return result
   end
 

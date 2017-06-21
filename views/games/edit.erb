@@ -2,7 +2,8 @@
   <div class="boxes">
     <table class="center">
       <form method="post" action="/games/<%= @games.id %>">
-        <tr><td>
+        <tr>
+        <td>
           <label for="game-name">Name: </label>
           <input id="game-name" type="text" name="name" value="<%= @games.name %>">
         </td>

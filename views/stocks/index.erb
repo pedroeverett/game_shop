@@ -16,10 +16,11 @@
         <th>Markup</th>
         <th></th>
         <th>Quantity</th>
+        <th></th>
       </tr>
       <% for stock in @stocks %>
       <tr>
-        <td><%= stock.game  %></a></td>
+        <td><%= stock.game  %></td>
         <td>|</td>
         <td><%= stock.platform %></td>
         <td>|</td>
@@ -31,6 +32,7 @@
         <td>|</td>
         <td class="<%= stock.color() %>">
                 <%= stock.quantity %></td>
+        <td><a href="/stocks/<%= stock.id %>/edit">Edit Stock</a></td>
       </tr>
       <% end %>
     </table>
